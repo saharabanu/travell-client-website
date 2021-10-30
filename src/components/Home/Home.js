@@ -1,17 +1,21 @@
 import React from 'react';
+import AboutUs from '../AboutUs/AboutUs';
 import Banner from '../Banner/Banner';
+import Packages from '../Packages/Packages';
 import Services from '../Services/Services';
-import Footer from '../Shared/Footer/Footer';
-import Header from '../Shared/Header/Header';
 
 const Home = () => {
     return (
         <div>
            
-           <Header></Header>
+          
            <Banner></Banner>
            <Services></Services>
-           <Footer></Footer>
+           <AboutUs></AboutUs>
+           <Packages></Packages>
+
+          
+           
         </div>
     );
 };

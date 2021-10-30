@@ -4,16 +4,22 @@ import {
 } from "react-router-dom";
 import './App.css';
 import AddServices from './components/AddServices/AddServices';
+import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
+import MyOrders from './components/MyOrders/MyOrders';
 import NotFound from './components/NotFound/NotFound';
 import OrderPlace from './components/OrderPlace/OrderPlace';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import AuthProvider from './context/AuthProvider';
 
 function App() {
   return (
     <div className="App">
-     
+      <AuthProvider>
      <Router>
+     <Header></Header>
      <Switch>
        <Route exact path="/">
          <Home></Home>
@@ -27,10 +33,14 @@ function App() {
          <AddServices></AddServices>
 
        </Route>
-       <Route path="/orderPlace">
+       <PrivateRoute path="/orderPlace/:orderPlaceId">
          <OrderPlace></OrderPlace>
 
-       </Route>
+       </PrivateRoute>
+       <PrivateRoute path="/myOrders">
+         <MyOrders></MyOrders>
+
+       </PrivateRoute>
        <Route path="/login">
          <Login></Login>
 
@@ -40,7 +50,9 @@ function App() {
 
        </Route>
      </Switch>
+     <Footer></Footer>
    </Router>
+   </AuthProvider>
     
       
     </div>
