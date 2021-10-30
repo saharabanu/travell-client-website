@@ -57,6 +57,10 @@ const Header = () => {
                                 </NavLink>
                                  <span>{user.displayName} </span>
             {user?.email && <button onClick={logout}>log out</button>}
+           
+            
+            
+                                   
                                 </div>
                                 
                             </div>
