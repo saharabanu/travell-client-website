@@ -9,10 +9,9 @@ const AddServices = () => {
         console.log(data);
         axios.post('http://localhost:5000/services',data)
         .then(res=>{
-            if(res.data.insertedId){
-                alert('Yahoo!!!! Added Successfully');
-                reset();
-            }
+            console.log(res.data)
+            reset();
+            
         })
     
     }
