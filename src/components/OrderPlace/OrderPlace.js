@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 
@@ -9,7 +8,7 @@ const OrderPlace = () => {
     const {user} =useAuth();
     const {orderPlaceId} =useParams();
     const [service,setService]= useState({})
-    const { register, handleSubmit, reset } = useForm({ defaultValues: { email: user.email,name:service.name,img:service.img} });
+    const { register, handleSubmit, reset } = useForm({ defaultValues: { email: user.email,name:service.name,img:service.img,price:service.price,description:service.description} });
 
 
     const [person, setPerson] = useState({});
@@ -53,8 +52,7 @@ const OrderPlace = () => {
                 </div>
                 <div className="col-md-5 col">
                 <form onSubmit={handleSubmit(onSubmit)}>
-                            {/* <input className="mb-3" required placeholder="Name" {...register("userName")} defaultValue={user.displayName} /> */}
-                            <br />
+                            
                             <input className="mb-3" required placeholder="Email" {...register("userEmail")} defaultValue={user.email} />
 
                                 <br />
@@ -65,9 +63,13 @@ const OrderPlace = () => {
                             
                             <input className="mb-3" required placeholder="Name" {...register("serviceName")} defaultValue={service.name} />
                             <br />
-                            <input className="mb-3" required placeholder="img" {...register("serviceImage")} defaultValue={service.img} />
+                            <input className="mb-3" required placeholder="img" {...register("img")} defaultValue={service.img} />
                             <br />
-                           <Link to='/myOrders'> <input type="submit" value="Place Order" /></Link>
+                            <input className="mb-3" required placeholder="price" {...register("price")} defaultValue={service.price} />
+                            <br />
+                            <input className="mb-3" required placeholder="description" {...register("description")} defaultValue={service.description} />
+                            <br />
+                            <input type="submit" value="Place Order" />
                         </form>
                 </div>
 

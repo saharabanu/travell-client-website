@@ -28,7 +28,7 @@ const Header = () => {
                                 >
                                 Home
                                 </NavLink>
-                                <NavLink className="header-items"
+                                {/* <NavLink className="header-items"
                                 to="/addServices"
                                 activeStyle={{
                                     fontWeight: "bold",
@@ -36,16 +36,8 @@ const Header = () => {
                                 }}
                                 >
                                 AddServices
-                                </NavLink>
-                                <NavLink className="header-items"
-                                to="/myOrders"
-                                activeStyle={{
-                                    fontWeight: "bold",
-                                    color: "red"
-                                }}
-                                >
-                               MyOrders
-                                </NavLink>
+                                </NavLink> */}
+                               
                                 <NavLink className="header-items"
                                 to="/login"
                                 activeStyle={{
@@ -55,8 +47,34 @@ const Header = () => {
                                 >
                                 Login
                                 </NavLink>
-                                 <span>{user.displayName} </span>
-            {user?.email && <button onClick={logout}>log out</button>}
+                                 <span>{user?.displayName} </span>
+            {user?.email && <>  <button onClick={logout}>log out</button>
+
+                            <NavLink className="header-items"
+                                to="/myOrders"
+                                activeStyle={{
+                                    fontWeight: "bold",
+                                    color: "red"
+                                }}
+                                >
+                               MyOrders
+                                </NavLink>
+
+                                <NavLink className="header-items"
+                                to="/addServices"
+                                activeStyle={{
+                                    fontWeight: "bold",
+                                    color: "red"
+                                }}
+                                >
+                                AddServices
+                                </NavLink>
+            
+            
+            
+            
+            
+            </>}
            
             
             

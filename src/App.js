@@ -29,10 +29,10 @@ function App() {
          <Home></Home>
 
        </Route>
-       <Route path="/addServices">
+       <PrivateRoute path="/addServices">
          <AddServices></AddServices>
 
-       </Route>
+       </PrivateRoute>
        <PrivateRoute path="/orderPlace/:orderPlaceId">
          <OrderPlace></OrderPlace>
 
