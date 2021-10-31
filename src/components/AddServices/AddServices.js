@@ -7,7 +7,7 @@ const AddServices = () => {
     const { register, handleSubmit,reset } = useForm();
     const onSubmit = data => {
         console.log(data);
-        axios.post('http://localhost:5000/services',data)
+        axios.post('https://glacial-badlands-60430.herokuapp.com/services',data)
         .then(res=>{
             console.log(res.data)
             reset();

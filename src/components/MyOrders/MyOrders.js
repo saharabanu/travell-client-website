@@ -6,14 +6,14 @@ const MyOrders = () => {
     const email = user.email;
     const [orders,setOrders] = useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/myOrder/${email}`)
+        fetch(`https://glacial-badlands-60430.herokuapp.com/myOrder/${email}`)
         .then(res=>res.json())
         .then(data=>setOrders(data))
     },[])
     const handleDelete =(id) =>{
         const proceed = window.confirm('Are you sure, you want to delete?');
        if(proceed){
-        const url = `http://localhost:5000/myOrder/${id}`;
+        const url = `https://glacial-badlands-60430.herokuapp.com/myOrder/${id}`;
         fetch(url,{
             method:"DELETE"
         })

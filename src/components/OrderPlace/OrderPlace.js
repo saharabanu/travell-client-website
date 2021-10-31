@@ -15,12 +15,12 @@ const OrderPlace = () => {
     const [person, setPerson] = useState({});
     
     useEffect(()=>{
-        fetch(`http://localhost:5000/services/${orderPlaceId}`)
+        fetch(`https://glacial-badlands-60430.herokuapp.com/services/${orderPlaceId}`)
         .then(res=>res.json())
         .then(data=>{setService(data)})
     },[])
     const onSubmit = data => {
-        fetch('http://localhost:5000/addOrder', {
+        fetch('https://glacial-badlands-60430.herokuapp.com/addOrder', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
