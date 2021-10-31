@@ -60,7 +60,7 @@ const Header = () => {
                                MyOrders
                                 </NavLink>
 
-                                <NavLink className="header-items"
+                                 <NavLink className="header-items"
                                 to="/addServices"
                                 activeStyle={{
                                     fontWeight: "bold",
@@ -68,7 +68,16 @@ const Header = () => {
                                 }}
                                 >
                                 AddServices
-                                </NavLink>
+                                </NavLink> 
+                                 <NavLink className="header-items"
+                                to="/manageOrders"
+                                activeStyle={{
+                                    fontWeight: "bold",
+                                    color: "red"
+                                }}
+                                >
+                                ManageOrders
+                                </NavLink> 
             
             
             

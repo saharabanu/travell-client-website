@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React from 'react';
 import { useForm } from "react-hook-form";
 import './AddServices.css';
@@ -7,12 +6,20 @@ const AddServices = () => {
     const { register, handleSubmit,reset } = useForm();
     const onSubmit = data => {
         console.log(data);
-        axios.post('https://glacial-badlands-60430.herokuapp.com/services',data)
-        .then(res=>{
-            console.log(res.data)
-            reset();
-            
+        fetch('https://glacial-badlands-60430.herokuapp.com/services',{
+            method:"POST",
+            headers:{
+                'content-type': 'application/json'
+            },
+            body:JSON.stringify(data)
         })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data)
+            reset();
+        })
+
+       
     
     }
     return (

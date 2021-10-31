@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const MyOrders = () => {
@@ -31,23 +32,25 @@ const MyOrders = () => {
 
     return (
         <div>
-           <h2>This is My Order list</h2>
+           <h2>This is My Order list  {orders.length}</h2>
            <div className="row container text-center">
                {
                   orders?.map(order=><div className="col-md-6 col-lg-4" key={order._id} >
-                      <div className="">
+                      <div className=" border border ">
                         <h4>{order?.email}</h4>
-                        <img  className="w-50 h-50"src={order?.serviceImage} alt="" />
-                        {/* <h5>{order?.serviceName}</h5>
+                        <img  className="w-50 h-50"src={order?.img} alt="" />
+                        <h5>{order?.name}</h5>
                         <br />
-                        <h5>{order?.service.price}</h5>
+                        <h5>{order?.price}</h5>
                         <br />
-                        <p>{order?.service.description
-                        }</p>  */}
+                        <p>{order?.description
+                        }</p> 
                         <br />
                        <button onClick={()=>handleDelete(order._id)} className="btn btn-danger m-2">delete</button>
+                       <Link to="/"><button className="btn btn-success px-4">Go Back</button></Link>
 
                       </div>
+                      
 
                   </div>)
 
