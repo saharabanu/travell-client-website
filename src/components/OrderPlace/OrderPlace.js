@@ -24,13 +24,13 @@ const OrderPlace = () => {
     const onSubmit = data => {
         data.status ='pending';
 
-	var myAddOrder = { name:service.name,img:service.img,price:service.price,description:service.description };
-        data = { ...data, ...myAddOrder};
+	let orders = { name:service.name,img:service.img,price:service.price,description:service.description };
+        data = { ...data, ...orders};
         console.log(data)
 
 
 
-        fetch('https://glacial-badlands-60430.herokuapp.com/addOrder', {
+        fetch('https://glacial-badlands-60430.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -40,7 +40,9 @@ const OrderPlace = () => {
         )
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                if(data.insertedId){
+                    alert('your booking has been done successfuly')
+                }
                 setPerson(data)
             })
 

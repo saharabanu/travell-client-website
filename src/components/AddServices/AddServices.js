@@ -15,6 +15,8 @@ const AddServices = () => {
         })
         .then(res=>res.json())
         .then(data=>{
+            if(data.insertedId){
+                alert('Service Added Successfully')}
             console.log(data)
             reset();
         })
@@ -26,10 +28,10 @@ const AddServices = () => {
         <div className="add-service">
             <h2>Please Add a Service</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
-             <input {...register("name")} placeholder="name" />
-            <textarea {...register("description")} placeholder="description"/>
-            <input type="number" {...register("price")} placeholder="price"/>
-            <input {...register("img")} placeholder="img url" />
+             <input {...register("name")} required  placeholder="name" />
+            <textarea {...register("description")} required   placeholder="description"/>
+            <input type="number" {...register("price")} required placeholder="price"/>
+            <input {...register("img")} required  placeholder="img url" />
             <input type="submit" />
             </form>
         </div>
