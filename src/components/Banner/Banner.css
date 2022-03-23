@@ -6,9 +6,10 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    margin-top:20px;
+    /* margin-top:20px; */
     margin-bottom:30px;
   }
-   h1{
+   .banner-text h3{
     color:lightcoral ;
+    padding-top: 40px;
   }

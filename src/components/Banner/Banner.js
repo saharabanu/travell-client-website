@@ -5,8 +5,8 @@ const Banner = () => {
     return (
         <div>
             <div className="banner-image">
-          <div className="banner-text">
-            <h1 style={{fontSize:"4rem "}}>Amazing Tours And Funs <br />AdvenTures Tour Waiting For You </h1>
+          <div className="banner-text ">
+            <h3 style={{fontSize:"4rem "}}>Amazing Tours And Funs <br />AdvenTures Tour Waiting For You </h3>
            
             
           </div>

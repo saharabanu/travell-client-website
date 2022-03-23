@@ -31,13 +31,13 @@ const ManageOrders = () => {
     }
     return (
         <div>
-            <h1 className="pt-4">All Orders Are Here : {orders.length}</h1>
+            <h1 className="pt-4">All Orders  : {orders.length}</h1>
             <div className="row container text-center">
                {
                   orders?.map(order=><div className="col-md-6 col-lg-4 mb-3" key={order._id} >
-                      <div className=" border border ">
+                      <div className=" border border text-start px-3 ">
                         
-                        <img  className="w-50 h-50"src={order?.img} alt="" />
+                        <img  className="w-100 h-50"src={order?.img} alt="" />
                         <h5>{order?.name}</h5>
                         
                         <h5>{order?.price}</h5>

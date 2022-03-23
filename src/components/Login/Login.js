@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../hooks/useAuth';
+import './Login.css';
 
 
 const Login = () => {
@@ -22,9 +23,11 @@ const Login = () => {
 
    
     return (
-        <div>
-            <h2 className="text-primary">Please Login</h2>
-            <button onClick={handleGoogleLogin} className="btn btn-warning p-3 rounded">Google Login</button>
+        <div className='login-page'>
+            <div className=' login-content border shadow-lg rounded pt-5 pb-5'>
+            <h2 className="text-danger pb-2">Please Login</h2>
+            <button onClick={handleGoogleLogin} className="btn btn-warning px-3 py-2 rounded ">Google Login</button>
+            </div>
 
         </div>
     );

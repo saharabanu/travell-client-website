@@ -28,15 +28,7 @@ const Header = () => {
                                 >
                                 Home
                                 </NavLink>
-                                {/* <NavLink className="header-items"
-                                to="/addServices"
-                                activeStyle={{
-                                    fontWeight: "bold",
-                                    color: "red"
-                                }}
-                                >
-                                AddServices
-                                </NavLink> */}
+                                
                                
                                 <NavLink className="header-items"
                                 to="/login"
@@ -48,7 +40,7 @@ const Header = () => {
                                 Login
                                 </NavLink>
                                  <span>{user?.displayName} </span>
-            {user?.email && <>  <button onClick={logout}>log out</button>
+            {user?.email && <>  <button onClick={logout} className="text-danger fw-bold">log out</button>
 
                             <NavLink className="header-items"
                                 to="/myOrders"
